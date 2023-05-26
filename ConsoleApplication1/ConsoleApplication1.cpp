@@ -192,7 +192,18 @@ int main() {
 				obj.hapus();
 				break;
 			case '3':
-				obj.travarse();
+				obj.traverse();
+				break;
+			case '4':
+				obj.revtraverse();
+				break;
+			case '5':
+				obj.searchData();
+				break;
+			case '5':
+				obj.
+					break
+
 
 
 			}
