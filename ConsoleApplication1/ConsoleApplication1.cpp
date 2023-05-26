@@ -119,7 +119,7 @@ void DoubleLinkedList::traverse() {
 }
 
 void DoubleLinkedList::revtraverse() {
-	if (listEmpty)) {
+	if (listEmpty()) {
 		cout << "\nList is empty" << endl;
 	}
 
@@ -130,7 +130,22 @@ void DoubleLinkedList::revtraverse() {
 			currentNode = currentNode->next;
 
 		while (currentNode != NULL) {
-			
+			cout << currentNode->noMhs << " " << currentNode->name << endl;
+			currentNode = currentNode->prev;
 		}
+	}
+}
+
+void DoubleLinkedList::hapus() {
+	if (listEmpty()) {
+		cout << "\nList is empty" << endl;
+	}
+	else {
+		cout << "\nEnter the roll number the strudent whose recrd is to be delete: "; 
+		int rollNo;
+		cin >> rollNo;
+		cout <<  endl;
+		if (DoubleLinkedList::deleteNode(rollNo) == false)
+			cout << "Record not found" << endl;
 	}
 }
