@@ -189,7 +189,7 @@ int main() {
 				obj.addNode();
 				break;
 			case '2':
-				obj
+				obj.
 
 
 
