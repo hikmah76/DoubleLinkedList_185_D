@@ -189,9 +189,10 @@ int main() {
 				obj.addNode();
 				break;
 			case '2':
-				obj.
-
-
+				obj.hapus();
+				break;
+			case '3':
+				obj.travarse();
 
 
 			}
