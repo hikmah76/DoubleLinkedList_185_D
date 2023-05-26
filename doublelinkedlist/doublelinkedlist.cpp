@@ -9,6 +9,7 @@ public:
 	Node* next;
 	Node* prev;
 };
+
 class Doublelinkedlist {
 private:
 	Node* START;
@@ -30,11 +31,11 @@ Doublelinkedlist::Doublelinkedlist() {
 
 void  Doublelinkedlist::addNode() {
 	int nim;
-	string nim;
+	string nm;
 	cout << "\nEnter the roll number of the student: ";
 	cin >> nim;
 	cout << "\nEnter the name number of the strudent: ";
-	cin >> nim;
+	cin >> nm;
 	Node* newNode = new Node(); //step 1
 	newNode->noMhs = nim; // step 2
 	newNode->name = nim; // step 2
@@ -49,7 +50,7 @@ void  Doublelinkedlist::addNode() {
 		if (START != NULL)
 			START->prev = newNode; // step 4
 		newNode->prev = NULL; //step 5
-		START = newNode;
+		START = newNode; // step 6
 		return;
 	}
 	/*inseting a Node between Two Nodes in the List*/
@@ -67,7 +68,12 @@ void  Doublelinkedlist::addNode() {
 
 	newNode->next = current->next; // step 4
 	newNode->prev = current; // step 5
+	if (current->next != NULL)
+		current->next->prev = newNode; //step 6
+	current->next = newNode; // step 7
 }
+
+bool Doublelinkedlist::search(int rollNo, Node** previous, Node* curret);
 
 
 
