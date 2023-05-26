@@ -1,20 +1,66 @@
-// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <string>
+using namespace std;
+class Node {
+public:
+	int noMhs;
+	string name;
+	Node* next;
+	Node* prev;
+};
 
-int main()
-{
-    std::cout << "Hello World!\n";
+class DoubleLinkedlist {
+private:
+	Node* START;
+public:
+	DoubleLinkedlist();
+	void addNode();
+	bool search(int rollNo, Node** previous, Node** current);
+	bool deleteNode(int rollNO);
+	bool listEmpty();
+	void traverse();
+	void revtraverse();
+	void hapus();
+	void searchData();
+};
+
+
+DoubleLinkedlist::DoubleLinkedlist() {
+	START = NULL;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void DoubleLinkedlist::addNode() {
+	int nim;
+	string nm;
+	cout << "\nEnter the roll number of the student: ";
+	cin >> nim;
+	cout << "\nEnter the number of the student: ";
+	cin >> nm; 
+	Node* newNode = new Node(); // step 1
+	newNode->noMhs = nim; // step 2
+	newNode->name = nm; // step 2
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+	/*inset a node in the beginning of  a double - linked List*/
+	if (START == NULL || nim <= START->noMhs) {
+		if (START != NULL && nim == START->noMhs) {
+			cout << 
+		}
+	}
+
+	/* insert  a Node Between Two Nodes in the List*/
+	Node* current = START; // STEP 1.a
+	Node* previous = NULL; // STEP 1.b
+	while (current->next != NULL && current->next->noMhs < nim) // step 1.c
+	{
+		previous = current; //1.d
+		current = current->next; //1.e
+	}
+ 
+	if (current->next != NULL && current->next->noMhs < nim) {
+		cout << "\nDuplicate roll  allowed" << endl;
+		return;
+	}
+
+
+		
+}
