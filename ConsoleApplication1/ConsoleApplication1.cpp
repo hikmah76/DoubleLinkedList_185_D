@@ -43,8 +43,15 @@ void DoubleLinkedlist::addNode() {
 	/*inset a node in the beginning of  a double - linked List*/
 	if (START == NULL || nim <= START->noMhs) {
 		if (START != NULL && nim == START->noMhs) {
-			cout << 
+			cout << "\nDuplicate number not allowed" << endl;
+			return;
 		}
+		newNode->next = START; // STEP 3
+		if (START != NULL)
+			START->prev = newNode; // step 4
+		newNode->prev = NULL; // step 5
+		START = newNode; // step 6
+		return;
 	}
 
 	/* insert  a Node Between Two Nodes in the List*/
@@ -61,6 +68,13 @@ void DoubleLinkedlist::addNode() {
 		return;
 	}
 
+	newNode->next = current->next; // step4
+	newNode->prev = current; // step 5
+	if (current->next != NULL)
+		current->next->prev = newNode; // step 6
+	current->next = newNode; // step 7
+}
 
-		
+bool DoubleLinkedlist::search(int rollNO, Node** previous, Node** current) {
+
 }
